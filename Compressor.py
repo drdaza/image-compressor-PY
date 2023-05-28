@@ -4,7 +4,7 @@ import os
 
 download_folder = "C:/Users/David Daza/Downloads/"
 images_folder = "C:/Users/David Daza/Pictures/Fondos/"
-audio_folder = ""
+desk = "C:/Users/Public/Desktop/"
 
 
 if __name__ == "__main__":
@@ -19,3 +19,10 @@ if __name__ == "__main__":
 
         if extension in [".exe", ".msi"]:
             os.remove(download_folder + file_name)
+
+if __name__ == "__main__":
+    for file_desk in os.listdir(desk):
+        name, extension = os.path.splitext(desk + file_desk)
+
+        if extension in [".lnk"]:
+            os.remove(desk + file_desk)
